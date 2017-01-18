@@ -1,5 +1,5 @@
 {
-  "name": "new-letlife",
+  "name": "node-postgresql",
   "version": "1.0.0",
   "description": "miao",
   "main": "index.js",
@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "babel-polyfill": "^6.20.0",
+    "body-parser": "^1.16.0",
     "express": "^4.14.0",
     "pg": "^6.1.2",
     "underscore": "^1.8.3"
