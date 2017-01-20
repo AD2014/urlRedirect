@@ -1,13 +1,13 @@
 'use strict';
 
-var babel = require("babel-core");
+// var babel = require("babel-core");
 
 import express from "express";
 import bodyParser from "body-parser";
 import { PORT, SERVER_NAME } from "./CONFIG/properties";
 import { Client } from "./app/database/db";
 
-const client = Client.connect();
+// const client = Client.connect();
 const app = express();
 
 const LISTENING_PORT = PORT;
@@ -16,7 +16,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 //API
 import { controllerUrl } from './app/url/index'
-app.post('/v1/url/:url', controllerUrl.create);
+app.post('/api/v1/url/link', controllerUrl.create);
+app.get('/api/v1/url/link', controllerUrl.readAll);
+app.get('/api/v1/url/link/:urlId', controllerUrl.readSingle);
 
 
 const ServerListening = (req, res, next) => {
@@ -38,3 +40,5 @@ process.on( 'SIGINT', () => {
   }
   return process.exit();
 });
+
+export { server }
